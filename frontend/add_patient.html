@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <title>Add Patient - OncoAide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="static/main.css">
+    <link rel="icon" type="image/jpg" href="static/img/favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Text', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #292929);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+            transition: background 0.3s ease;
+        }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(20, 20, 20, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.nav-logo span {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 4px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00ffcc, #00aaff);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+#theme_toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme_toggle:hover {
+    color: #00ffcc;
+    transform: scale(1.1);
+}
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .upload-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #2a2e45, #3b4060);
+            color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .upload-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .upload-section input[type="file"] {
+            padding: 12px;
+            border: 2px dashed #ffffff;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .upload-section input[type="file"]:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .upload-section button {
+            padding: 12px;
+            background: linear-gradient(to right, #00aaff, #00cc99);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .upload-section button:hover {
+            background: linear-gradient(to right, #00cc99, #00aaff);
+            transform: scale(1.05);
+        }
+
+        #upload-status {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            min-height: 20px;
+        }
+
+.footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85rem;
+    background: rgba(20, 20, 20, 0.9);
+    color: #eaeaea;
+}
+
+        /* Light Theme */
+        html[data-theme="light"] body {
+            background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+        }
+
+        html[data-theme="light"] .navbar {
+            background: linear-gradient(to right, #2a2e45, #3b4060);
+        }
+
+        html[data-theme="light"] .nav-links a {
+            color: #d0d4e0;
+        }
+
+        html[data-theme="light"] .nav-links a:hover {
+            color: #00ffcc;
+        }
+
+        html[data-theme="light"] #theme_toggle {
+            color: #d0d4e0;
+        }
+
+        html[data-theme="light"] #theme_toggle:hover {
+            color: #00ffcc;
+        }
+
+        html[data-theme="light"] .upload-section {
+            background: linear-gradient(135deg, #ffffff, #f9fafc);
+            color: #2a2e45;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        html[data-theme="light"] .upload-section input[type="file"] {
+            border-color: #3b4060;
+            color: #2a2e45;
+            background: #f9fafc;
+        }
+
+        html[data-theme="light"] .upload-section button {
+            background: linear-gradient(to right, #00cc99, #00ffcc);
+        }
+
+        html[data-theme="light"] #upload-status {
+            color: #2a2e45;
+        }
+
+        html[data-theme="light"] .footer {
+            background: linear-gradient(to right, #2a2e45, #3b4060);
+            color: #d0d4e0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo"><img src="static/img/oncoaide.png" alt="OncoAide" /> OncoAide - AI Oncology Assistant</div>
+        <ul class="nav-links">
+            <li><a href="bot.html">Home</a></li>
+            <li><a href="add_patient.html">Add Patient</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="theme_toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="upload-section">
+            <h2>📤 Upload New Patient</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="patient-file" accept=".json,.txt" required />
+                <button type="submit">Upload</button>
+            </form>
+            <div id="upload-status"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year"></span> OncoAide — AI Oncology Assistant.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#upload-form').on('submit', async function (e) {
+                e.preventDefault();
+                const fileInput = $('#patient-file')[0];
+                if (!fileInput.files.length) {
+                    $('#upload-status').text('Please select a file.');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/upload-patient', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await response.json();
+                    $('#upload-status').html(data.message).css('color', '#00ffcc');
+                } catch (error) {
+                    $('#upload-status').html('⚠️ Error uploading file: ' + error.message).css('color', '#ff375f');
+                }
+            });
+
+            $('#theme_toggle').on('click', function () {
+                const currentTheme = $('html').attr('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                $('html').attr('data-theme', newTheme);
+                $(this).find('i').toggleClass('fa-moon fa-sun');
+                $(this).attr('title', newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+            });
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Hover effects for nav links and theme toggle
+            $('.nav-links a').hover(
+                function () { $(this).css('color', '#00cc99'); },
+                function () { $(this).css('color', $('html').attr('data-theme') === 'dark' ? '#ffffff' : '#d0d4e0'); }
+            );
+            $('#theme_toggle').hover(
+                function () { $(this).css({ 'color': '#00cc99', 'transform': 'scale(1.1)' }); },
+                function () { $(this).css({ 'color': $('html').attr('data-theme') === 'dark' ? '#ffffff' : '#d0d4e0', 'transform': 'scale(1)' }); }
+            );
+            $('.upload-section button').hover(
+                function () { $(this).css('transform', 'scale(1.05)'); },
+                function () { $(this).css('transform', 'scale(1)'); }
+            );
+        });
+    </script>
+</body>
+
+</html>

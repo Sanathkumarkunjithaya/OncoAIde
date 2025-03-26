@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <title>Contact - OncoAide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="static/main1.css">
+    <link rel="icon" type="image/jpg" href="static/img/favicon.png">
+    <style>
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #1e1e1e, #292929);
+            color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .contact-details {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo"><img src="static/img/oncoaide.png" alt="OncoAide" /> OncoAide - AI Oncology Assistant
+        </div>
+        <ul class="nav-links">
+            <li><a href="bot.html">Home</a></li>
+            <li><a href="add_patient.html">Add Patient</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="theme_toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="contact-section">
+            <h2>📍 Contact Us</h2>
+            <p class="contact-details"><b>🏢 Address:</b> NITK-STEP Incubation Centre, NITK Campus</p>
+            <p class="contact-details"><b>📞 Phone:</b> +91-9481847572</p>
+            <p>📧 <b>Email:</b> <a href="mailto:info@airatsystems.com"
+                    style="background-color: #e6f2ff; padding: 4px; border-radius: 4px; text-decoration: none;">info@airatsystems.com</a>
+            </p>
+
+            </p>
+
+            </p>
+            <p class="contact-details"><b>🌐 About AiRat Systems:</b> AIRAT stands for AI, Robotics and Automation Technologies. We build products and solutions using Artificial
+            Intelligence, Robotics and Automation for diverse industrial sectors, predominantly Healthcare, Agriculture and Consumer
+            industries. Our main expertise is in conducting research and product design of AI and Robotics technologies till MVP. We
+            are an R&D company who make products and license the technologies to product companies (both SMEs and Large companies)
+            for a license fee or royalty.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year"></span> OncoAide — AI Oncology Assistant.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

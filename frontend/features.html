@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Features - OncoAide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="static/main1.css">
+    <link rel="icon" type="image/jpg" href="static/img/favicon.png">
+    <style>
+        .features-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #1e1e1e, #292929);
+            color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            font-size: 1.2rem;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin: 10px auto;
+            width: 80%;
+            transition: transform 0.3s ease;
+        }
+
+        .features-list li:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo"><img src="static/img/oncoaide.png" alt="OncoAide" /> OncoAide - AI Oncology Assistant
+        </div>
+        <ul class="nav-links">
+            <li><a href="bot.html">Home</a></li>
+            <li><a href="add_patient.html">Add Patient</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="theme_toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="features-section">
+            <h2>🔬 AI-Powered Features</h2>
+            <ul class="features-list">
+                <li>🩺 <b>Advanced Oncology Assistant</b> – AI-powered support for oncologists, enhancing clinical decision-making.</li>
+                <li>📸 <b>Medical Diagnosis Assistance</b> – Provides AI-driven interpretations of patient symptoms and reports.
+</li>
+                <li>💊 <b>Personalized Treatment Plans</b> – Recommends tailored treatments based on patient history and medical records.
+</li>
+                <li>🧠 <b>Natural Language Processing (NLP)</b> – AI understands and processes complex medical records
+                    efficiently.</li>
+                <li>🔄 <b>Seamless Patient Record Integration</b> – Fetches structured data from MongoDB for accurate responses.</li>
+                <li>⚡ <b>Powered by:</b> DeepSeek-R1 & Groq LLM for fast and accurate medical responses.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year"></span> OncoAide — AI Oncology Assistant.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

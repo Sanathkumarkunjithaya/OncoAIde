@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>OncoAide</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600;700&display=swap">
+	<link rel="stylesheet" href="static/main1.css">
+	<link rel="icon" type="image/jpg" href="static/img/favicon.png">
+
+</head>
+
+
+<body>
+	<nav class="navbar">
+		<div class="nav-logo"><img src="static/img/oncoaide.png" alt="OncoAide" /> OncoAide - AI Oncology Assistant</div>
+		<ul class="nav-links">
+			<li><a href="bot.html">Home</a></li>
+			<li><a href="add_patient.html">Add Patient</a></li>
+			<li><a href="features.html">Features</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><button id="theme_toggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button></li>
+		</ul>
+	</nav>
+
+	<main class="main-content">
+		<section class="chat-section">
+			<ul class="chat-messages"></ul>
+			<div class="typing-indicator" id="typing" style="display: none;">
+				<span></span><span></span><span></span>
+			</div>
+			<footer class="chat-input-area">
+				<input id="msg_input" type="text" placeholder="Ask about patient records..." />
+				<button id="send_button" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
+			</footer>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<p>© <span id="current-year"></span> OncoAide — AI Oncology Assistant.</p>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="static/main1.js"></script>
+	<div id="custom-cursor"></div>
+	<div id="cursor-trail"></div>
+
+</body>
+
+</html>
